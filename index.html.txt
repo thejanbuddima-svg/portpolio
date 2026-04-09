@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thejan Scripts - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #eaeaea;
+            scroll-behavior: smooth;
+        }
+        a {
+            color: #50fa7b; /* Neon Green */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #eaeaea;
+        }
+        nav .active {
+            border-bottom: 2px solid #50fa7b; /* Neon Green */
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            nav a {
+                display: none; /* Hide links in mobile */
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-menu.active {
+                display: block;
+                position: absolute;
+                top: 40px;
+                background: #1a1a1a;
+                width: 100%;
+            }
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 3em;
+            transition: all 0.3s ease;
+        }
+        #hero p {
+            font-size: 1.2em;
+        }
+        #cta {
+            padding: 15px 30px;
+            background: #50fa7b;
+            border: none;
+            color: #1a1a1a;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #cta:hover {
+            background: #4ef7a3;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #about h2 {
+            margin-bottom: 20px;
+        }
+        #skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill {
+            padding: 10px 20px;
+            background: #282a36;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .skill:hover {
+            transform: scale(1.1);
+        }
+
+        /* Projects Section */
+        #projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+        }
+        .project-card {
+            background: #282a36;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-btn {
+            padding: 10px;
+            background: #50fa7b;
+            border: none;
+            color: #1a1a1a;
+            width: 100%;
+            cursor: pointer;
+        }
+        .project-btn:hover {
+            background: #4ef7a3;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .service {
+            margin: 15px 0;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        #contact input, #contact textarea {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            background: #282a36;
+            color: #eaeaea;
+        }
+        #contact button {
+            padding: 10px;
+            background: #50fa7b;
+            border: none;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #contact button:hover {
+            background: #4ef7a3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="hamburger" id="hamburger">☰</div>
+        <div class="nav-menu">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Thejan Scripts</h1>
+        <p>Building clean and modern websites</p>
+        <button id="cta">View Work</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer skilled in creating dynamic and responsive web applications.</p>
+        <div id="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>A short description of Project 1.</p>
+            <button class="project-btn">View Project</button>
+        </div>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>A short description of Project 2.</p>
+            <button class="project-btn">View Project</button>
+        </div>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>A short description of Project 3.</p>
+            <button class="project-btn">View Project</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <div class="service">Web Design</div>
+        <div class="service">Website Development</div>
+        <div class="service">UI/UX Basics</div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div>
+            <a href="https://github.com" target="_blank">GitHub</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Thejan Scripts</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth Scroll for Navigation Links
+        const navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active'); // Close mobile menu
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
